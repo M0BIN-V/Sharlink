@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sharlink.Client.Maui.MainPage"
+             Loaded="ContentPage_Loaded">
+
+    <Grid BackgroundColor="#0A1A1E">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollView 
+            Background="#070D0F"
+          x:Name="Scroller"
+          Grid.Row="0">
+            <VerticalStackLayout 
+              x:Name="MessageViewer"
+                Padding="0,0,0,20">
+               
+            </VerticalStackLayout>
+        </ScrollView>
+        <Grid
+            Margin="15"
+          Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid 
+                HeightRequest="50"
+              Grid.Column="0">
+                <Border Stroke="Aqua"
+                        Padding="20,2,20,0"
+                        HeightRequest="50">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="50" />
+                    </Border.StrokeShape>
+                    <Entry 
+                        x:Name="MessageBox" 
+                        Placeholder="Enter message"
+                        FontSize="18" 
+                        HeightRequest="80">
+                    </Entry>
+
+                </Border>
+
+            </Grid>
+            <Grid
+              Grid.Column="1">
+                <Button 
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    Text=">" 
+                    Clicked="Button_Clicked" 
+                    Margin="0,0,0,5" 
+                    CornerRadius="50" 
+                    BackgroundColor="Transparent" 
+                    BorderColor="Aqua" 
+                    BorderWidth="1"
+                    TextColor="Aqua" RotationY="0">
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharlink.Server", "Sharlink.Server\Sharlink.Server.csproj", "{B3EFDB30-41A7-4D9F-A708-34A93B24278E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharlink.Test", "Sharlink.Test\Sharlink.Test.csproj", "{FCC5F501-C8C1-4101-8BDB-02770C191622}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharlink.Client.Cli", "Sharlink.Client.Cli\Sharlink.Client.Cli.csproj", "{EF652CAD-7AE6-4756-8BDF-87346532E94B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharlink.Client.Hub", "Sharlink.Client.Hub\Sharlink.Client.Hub.csproj", "{B3558F72-90A4-4CEB-9198-8B0B2D4DE62A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sharlink.Client.Maui", "Sharlink.Client.Maui\Sharlink.Client.Maui.csproj", "{65879545-C128-4E62-A2BF-A03D1ECB3519}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3EFDB30-41A7-4D9F-A708-34A93B24278E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3EFDB30-41A7-4D9F-A708-34A93B24278E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3EFDB30-41A7-4D9F-A708-34A93B24278E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3EFDB30-41A7-4D9F-A708-34A93B24278E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC5F501-C8C1-4101-8BDB-02770C191622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC5F501-C8C1-4101-8BDB-02770C191622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC5F501-C8C1-4101-8BDB-02770C191622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC5F501-C8C1-4101-8BDB-02770C191622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF652CAD-7AE6-4756-8BDF-87346532E94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF652CAD-7AE6-4756-8BDF-87346532E94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF652CAD-7AE6-4756-8BDF-87346532E94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF652CAD-7AE6-4756-8BDF-87346532E94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3558F72-90A4-4CEB-9198-8B0B2D4DE62A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3558F72-90A4-4CEB-9198-8B0B2D4DE62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3558F72-90A4-4CEB-9198-8B0B2D4DE62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3558F72-90A4-4CEB-9198-8B0B2D4DE62A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65879545-C128-4E62-A2BF-A03D1ECB3519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65879545-C128-4E62-A2BF-A03D1ECB3519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65879545-C128-4E62-A2BF-A03D1ECB3519}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{65879545-C128-4E62-A2BF-A03D1ECB3519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65879545-C128-4E62-A2BF-A03D1ECB3519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65879545-C128-4E62-A2BF-A03D1ECB3519}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47FDAD37-DC0B-4C24-90EE-2A9A0777D0A9}
+	EndGlobalSection
+EndGlobal
