@@ -1,4 +1,4 @@
-﻿namespace Sharlink.Client.Utilities;
+﻿namespace Sharlink.Client.Cli.Utilities;
 
 public static class UserColorGenerator
 {

@@ -3,7 +3,7 @@ using Sharlink.Client.Cli.Models;
 using Sharlink.Client.Hub.Models;
 using static Sharlink.Client.Utilities.UiGenerator;
 
-namespace Sharlink.Client.Utilities;
+namespace Sharlink.Client.Cli.Utilities;
 
 public class ConsoleViewer(string userName)
 {

@@ -1,9 +1,10 @@
-﻿using Sharlink.Client.Utilities;
+﻿using Sharlink.Client.Cli.Utilities;
 using Sharlink.Client.Hub;
 using Sharlink.Client.Hub.Models;
 using System.Text;
 
-Console.OutputEncoding = Encoding.UTF8;
+Console.OutputEncoding = Encoding.Unicode;
+Console.InputEncoding = Encoding.Unicode;
 
 Console.Write("Enter your name : ");
 var userName = Console.ReadLine() ?? "Guest";

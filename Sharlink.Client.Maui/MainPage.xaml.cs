@@ -1,6 +1,9 @@
 ﻿using Microsoft.Maui.Controls.Shapes;
 using Sharlink.Client.Hub;
 using Sharlink.Client.Hub.Models;
+using Sharlink.Client.Maui.Data;
+using Sharlink.Client.Maui.Models;
+using Sharlink.Client.Maui.Utilities;
 
 namespace Sharlink.Client.Maui;
 
@@ -39,7 +42,12 @@ public partial class MainPage : ContentPage
 
     private void AddMessage(Message message, FlowDirection align)
     {
-        var messageColor = Colors.Aqua;
+        if (!TmpDb.UserColors.Any(uc => uc.UserName == message.UserName))
+        {
+            TmpDb.UserColors.Add(new UserColor { UserName = message.UserName, Color = UserColorGenerator.GetNewColor() });
+        }
+
+        var messageColor = TmpDb.UserColors.Single(uc => uc.UserName == message.UserName).Color;
 
         var header = new Label
         {
@@ -84,12 +92,15 @@ public partial class MainPage : ContentPage
             header,
             messageBody
         };
+
         messageView.Padding = new Thickness(0, 10, 0, 0);
         messageView.FlowDirection = align;
 
         MessageViewer.Add(messageView);
 
-        Scroller.ScrollToAsync(0, 40, false);
+
+
+        Scroller.ScrollToAsync(MessageViewer, ScrollToPosition.End, false);
     }
 
     private async void ContentPage_Loaded(object sender, EventArgs e)
@@ -99,5 +110,7 @@ public partial class MainPage : ContentPage
             _userName = await DisplayPromptAsync("Welcome !", "What's your name?", cancel: "");
         }
         while (string.IsNullOrWhiteSpace(_userName));
+
+        TmpDb.UserColors.Add(new UserColor { UserName = _userName, Color = Colors.Aqua });
     }
 }
