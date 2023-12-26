@@ -6,6 +6,6 @@ builder.Services.AddSignalR();
 
 var app = builder.Build();
 
-app.MapHub<ChatHub>("/chatHub");
+app.MapHub<ServerChatHub>("/chatHub");
 
 app.Run();

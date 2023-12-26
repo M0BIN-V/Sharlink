@@ -3,12 +3,23 @@ using Microsoft.AspNetCore.SignalR.Client;
 
 namespace Sharlink.Client.Hub;
 
-public class ClientChatHub(string serverUrl)
+public class ClientChatHub
 {
-    readonly HubConnection _connection =
-        new HubConnectionBuilder().WithUrl(serverUrl).Build();
+    readonly HubConnection _connection;
+    public ClientChatHub()
+    {
+        string serverUrl;
 
-    public async Task Start(Action<Message> action)
+#if DEBUG
+        serverUrl = "https://localhost:7236/chathub";
+#else
+        serverUrl = "https://sharlink.liara.run/chathub";
+#endif
+        _connection =
+       new HubConnectionBuilder().WithUrl(serverUrl).Build();
+    }
+
+    public async Task StartAsync(Action<Message> action)
     {
         await _connection.StartAsync();
 

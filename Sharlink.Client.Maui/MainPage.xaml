@@ -4,7 +4,7 @@
              x:Class="Sharlink.Client.Maui.MainPage"
              Loaded="ContentPage_Loaded">
 
-    <Grid BackgroundColor="#0A1A1E">
+    <Grid BackgroundColor="#2E323E">
         <Grid.RowDefinitions>
             <RowDefinition Height="9*" />
             <RowDefinition Height="1*" />
@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <ScrollView 
-            Background="#070D0F"
+            Background="#282C34"
           x:Name="Scroller"
           Grid.Row="0">
             <VerticalStackLayout 
@@ -37,13 +37,14 @@
                 HeightRequest="50"
               Grid.Column="0">
                 <Border Stroke="Aqua"
+                        Margin="0,0,0,5"
                         Padding="20,2,20,0"
-                        HeightRequest="50">
+                        HeightRequest="51">
                     <Border.StrokeShape>
                         <RoundRectangle CornerRadius="50" />
                     </Border.StrokeShape>
                     <Entry 
-                        x:Name="MessageBox" 
+                        x:Name="MessageBox"
                         Placeholder="Enter message"
                         FontSize="18" 
                         HeightRequest="80">
@@ -57,14 +58,16 @@
                 <Button 
                     WidthRequest="50"
                     HeightRequest="50"
-                    Text=">" 
+                    Text=">"
+                    FontSize="20"
                     Clicked="Button_Clicked" 
                     Margin="0,0,0,5" 
                     CornerRadius="50" 
-                    BackgroundColor="Transparent" 
+                    BackgroundColor="Aqua" 
                     BorderColor="Aqua" 
                     BorderWidth="1"
-                    TextColor="Aqua" RotationY="0">
+                    FontAttributes="Bold"
+                    TextColor="#2E323E" RotationY="0" FontAutoScalingEnabled="False">
                 </Button>
             </Grid>
         </Grid>

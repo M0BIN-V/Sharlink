@@ -9,7 +9,7 @@ namespace Sharlink.Client.Maui;
 
 public partial class MainPage : ContentPage
 {
-    readonly ClientChatHub _chathub = new("https://sharlink.liara.run/chathub");
+    readonly ClientChatHub _chathub = new();
 
     string _userName = "MAUI APP";
 
@@ -17,13 +17,11 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
 
-        _ = _chathub.Start((message) =>
-            {
-                MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    AddMessage(message, message.UserName == _userName ? FlowDirection.RightToLeft : FlowDirection.LeftToRight);
-                });
-            });
+        _ = _chathub.StartAsync((message) =>
+        {
+            MainThread.BeginInvokeOnMainThread(() =>
+            AddMessage(message, message.UserName == _userName ? FlowDirection.RightToLeft : FlowDirection.LeftToRight));
+        });
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -40,7 +38,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void AddMessage(Message message, FlowDirection align)
+    private async void AddMessage(Message message, FlowDirection align)
     {
         if (!TmpDb.UserColors.Any(uc => uc.UserName == message.UserName))
         {
@@ -60,8 +58,10 @@ public partial class MainPage : ContentPage
         };
 
         var cornerRadius = new CornerRadius(
-            topLeft: 10, topRight: 10,
-            bottomLeft: align == FlowDirection.LeftToRight ? 0 : 10, bottomRight: align == FlowDirection.LeftToRight ? 10 : 0
+            topLeft: 10,
+            topRight: 10,
+            bottomLeft: align == FlowDirection.LeftToRight ? 0 : 10,
+            bottomRight: align == FlowDirection.LeftToRight ? 10 : 0
             );
 
         var bodyBorder = new Border
@@ -76,7 +76,9 @@ public partial class MainPage : ContentPage
                 Text = message.Content,
                 Margin = new Thickness(20, 7, 20, 0),
                 FontSize = 15,
-            }
+                TextColor = Colors.White,
+            },
+            BackgroundColor = Color.FromArgb("#2E323A")
         };
 
         var messageBody = new HorizontalStackLayout
@@ -98,9 +100,7 @@ public partial class MainPage : ContentPage
 
         MessageViewer.Add(messageView);
 
-
-
-        Scroller.ScrollToAsync(MessageViewer, ScrollToPosition.End, false);
+        await Scroller.ScrollToAsync(MessageViewer, ScrollToPosition.End, false);
     }
 
     private async void ContentPage_Loaded(object sender, EventArgs e)

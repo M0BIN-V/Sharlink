@@ -10,9 +10,8 @@ Console.Write("Enter your name : ");
 var userName = Console.ReadLine() ?? "Guest";
 var viewer = new ConsoleViewer(userName);
 
-var chatHub = new ClientChatHub(
-    serverUrl: "https://sharlink.liara.run/chathub");
-await chatHub.Start(viewer.ShowMessage);
+var chatHub = new ClientChatHub();
+await chatHub.StartAsync(viewer.ShowMessage);
 
 Console.Clear();
 
